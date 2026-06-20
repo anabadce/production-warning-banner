@@ -161,7 +161,6 @@
   }
 
   // Show or remove the banner based on the current URL and saved settings.
-  // Safe to call repeatedly (e.g. on every SPA navigation).
   async function render() {
     const settings = await getSettings();
     const shouldShow = urlMatches(window.location.href, settings.urls);
@@ -182,7 +181,7 @@
     document.addEventListener('DOMContentLoaded', render);
   }
 
-  // SPA navigation: the background script notifies us when the tab URL changes
+  // SPA navigation: the background script notifies when the tab URL changes
   // without a full page reload, so we re-evaluate the banner.
   api.runtime.onMessage.addListener(message => {
     if (message && message.type === 'pwb:urlChanged') render();
