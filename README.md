@@ -10,6 +10,7 @@ When you visit a URL that matches your configured list, a colored banner is inje
 - is fully visible above page content (fixed positioning, highest z-index)
 - can be **dismissed** with a close button — a small tab remains so you can bring it back
 - is configurable: URL patterns, position, color, and text are all saved via browser sync storage
+- works in **Single Page Apps** — the banner updates as you navigate between client-side routes, without a full page reload
 
 ## Configuration
 
